@@ -1,0 +1,26 @@
+<div class="m-dialog {{severity}}">
+   <div class="m-modal">
+      <div class="m-content">
+         <div class="m-title">
+            <i class="m-icon"></i>
+            <span>{{{title}}}</span>
+         </div>
+         <div class="m-message">{{{message}}}
+            {{#if layers}}
+            <br>
+            <select class="m-layer-selection">
+               {{#each layers}}
+               <option value="{{{this.name}}}">{{this.name}}</option>
+               {{/each}}
+             </select> 
+             {{/if}}
+         </div>
+         <div id="m-edition-dialog-button-aceptar" class="m-edition-dialog-button">
+            <button>{{translations.accept_btn}}</button>
+         </div>
+         <div id="m-edition-dialog-button-cancelar" class="m-edition-dialog-button">
+            <button>{{translations.cancel_btn}}</button>
+         </div>
+      </div>
+   </div>
+</div>

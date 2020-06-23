@@ -15,10 +15,10 @@
     "name": "Edition",
     "description": "Edición de geoprocesos",
     "text": "Plugin que permite editar capas existentes en el mapa, o creadas por el propio usuario",
-    "version": "1.0.0",
-    "date": "Marzo 2020",
+    "version": "1.1.0",
+    "date": "Junio, 2020",
     "author": "",
-    "org": "",
+    "org": "Consejería de Agricultura, Ganadería, Pesca y Desarrollo Sostenible de la Junta de Andalucía.",
     "tags": "mapea,plugin",
     "icon": "./facade/assets/icons/icons.svg",
     "centralized": true

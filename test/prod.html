@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="mapea" content="yes">
     <title>PLUGIN TEST</title>
-
-    <!-- styles -->
-    <link href="http://mapea4-sigc.juntadeandalucia.es/assets/css/mapea.ol.min.css" rel="stylesheet" />
+    <link href="http://mapea4-sigc.juntadeandalucia.es/mapea/assets/css/mapea-5.1.0.ol.min.css" rel="stylesheet" />
+    <link href="../dist/edition.ol.min.css" rel="stylesheet" />
     <style rel="stylesheet">
       html,
       body {
@@ -19,35 +18,20 @@
         overflow: hidden;
       }
     </style>
-
-    <!-- CSS plugin here -->
-    <link href="../../../build/edition/edition.min.css" rel="stylesheet" />
-
   </head>
-
   <body>
-    <!-- container -->
     <div id="mapjs" class="container"></div>
-
-    <!-- libraries -->
-    <script type="text/javascript" src="http://mapea4-sigc.juntadeandalucia.es/vendor/browser-polyfill.js"></script>
-    <script type="text/javascript" src="http://mapea4-sigc.juntadeandalucia.es/js/mapea.ol.min.js"></script>
-    <!-- configuration -->
-    <script type="text/javascript" src="http://mapea4-sigc.juntadeandalucia.es/js/configuration.js"></script>
-    <!-- min js -->
-    <script src="../../../build/edition/edition.ol.min.js" charset="utf-8"></script>
-
+    <script type="text/javascript" src="http://mapea4-sigc.juntadeandalucia.es/mapea/js/mapea-5.1.0.ol.min.js"></script>
+    <script type="text/javascript" src="http://mapea4-sigc.juntadeandalucia.es/mapea/js/configuration-5.1.0.js"></script>
+    <script src="../dist/edition.ol.min.js" charset="utf-8"></script>
 
     <script type="application/javascript">
-      var myMap = M.map({
-        container: 'mapjs'
+      var map = M.map({
+        container: 'mapjs',
+        controls: ["layerswitcher"]
       });
-
-      // create here the plugin
-      var mp = new M.plugin.edition();
-
-      // add here the plugin into the map
-      myMap.addPlugin(mp);
+      var mp = new M.plugin.Edition();
+      map.addPlugin(mp);
     </script>
   </body>
 

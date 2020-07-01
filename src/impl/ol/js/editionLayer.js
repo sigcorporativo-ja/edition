@@ -123,7 +123,7 @@ export default class editionLayer extends M.impl.Layer {
    */
   selectableStyle(style) {
     var this_ = this;
-    return function() {
+    return function () {
       if (this_.base_.highlightControl.getImpl().highlightInteraction_ === null) {
         return style;
       } else {
@@ -409,7 +409,7 @@ export default class editionLayer extends M.impl.Layer {
    */
   removeFeature(MFeature) {
     var this_ = this;
-    this.sandBoxLayer_.getFeatures().forEach(function(feature) {
+    this.sandBoxLayer_.getFeatures().forEach(function (feature) {
       if (feature === MFeature) {
         this_.sandBoxLayer_.removeFeatures([feature]);
       }
@@ -442,7 +442,7 @@ export default class editionLayer extends M.impl.Layer {
    */
   addFeaturesToSandBox(featuresArray) {
     var this_ = this;
-    featuresArray.forEach(function(feature, index, array) {
+    featuresArray.forEach(function (feature, index, array) {
       var featureAlreadyAdded = false;
       for (let i = 0; i < this_.sandBoxLayer_.getFeatures().length; i++) {
         if (this_.sandBoxLayer_.getFeatures()[i].getImpl().getId() === Number(feature.id)) {
@@ -585,7 +585,7 @@ export default class editionLayer extends M.impl.Layer {
   getGeometriesExtension() {
     var features = this.ol3Layer_.getSource().getFeatures();
     var extent = new ol.extent.createEmpty();
-    features.forEach(function(f, index, array) {
+    features.forEach(function (f, index, array) {
       ol.extent.extend(extent, f.getGeometry().getExtent());
     });
 
@@ -607,7 +607,7 @@ export default class editionLayer extends M.impl.Layer {
     }
 
     var extent = new ol.extent.createEmpty();
-    foundFeatures.forEach(function(f, index, array) {
+    foundFeatures.forEach(function (f, index, array) {
       if (f !== null) {
         ol.extent.extend(extent, f.getGeometry().getExtent());
       }
@@ -631,7 +631,7 @@ export default class editionLayer extends M.impl.Layer {
     }
 
     var extent = new ol.extent.createEmpty();
-    olFeatures.forEach(function(f, index, array) {
+    olFeatures.forEach(function (f, index, array) {
       if (f !== null) {
         ol.extent.extend(extent, f.getGeometry().getExtent());
       }
@@ -652,7 +652,7 @@ export default class editionLayer extends M.impl.Layer {
     if (this.ol3Layer_.getSource().getFeatures().length > 0) {
       var features = this.ol3Layer_.getSource().getFeatures();
       var extent = new ol.extent.createEmpty();
-      features.forEach(function(f) {
+      features.forEach(function (f) {
         ol.extent.extend(extent, f.getGeometry().getExtent());
       });
       this.map_.getMapImpl().getView().fit(extent, { duration: 500 });
@@ -734,7 +734,7 @@ export default class editionLayer extends M.impl.Layer {
     let foundFeature = null;
     if (this.ol3Layer_.getSource().getFeatures().length > 0) {
       var features = this.ol3Layer_.getSource().getFeatures();
-      features.forEach(function(f, index, array) {
+      features.forEach(function (f, index, array) {
         if (f.getId() === featureId) {
           foundFeature = f;
           return true;
@@ -762,7 +762,7 @@ export default class editionLayer extends M.impl.Layer {
     let foundFeature = null;
     if (this.ol3Layer_.getSource().getFeatures().length > 0) {
       var features = this.ol3Layer_.getSource().getFeatures();
-      features.forEach(function(f, index, array) {
+      features.forEach(function (f, index, array) {
         if (f.get(attr) === value) {
           foundFeature = f;
           return true;
@@ -867,6 +867,16 @@ export default class editionLayer extends M.impl.Layer {
       stroke: new ol.style.Stroke({
         color: 'blue',
         width: 2
+      }),
+      image: new ol.style.Circle({
+        radius: 4,
+        fill: new ol.style.Fill({
+          color: [93, 95, 229, 0.8]
+        }),
+        stroke: new ol.style.Stroke({
+          color: 'blue',
+          width: 2
+        })
       })
     });
   }
@@ -887,6 +897,16 @@ export default class editionLayer extends M.impl.Layer {
       stroke: new ol.style.Stroke({
         color: 'yellow',
         width: 2
+      }),
+      image: new ol.style.Circle({
+        radius: 4,
+        fill: new ol.style.Fill({
+          color: [249, 232, 6, 0.8]
+        }),
+        stroke: new ol.style.Stroke({
+          color: 'yellow',
+          width: 2
+        }),
       })
     });
   }

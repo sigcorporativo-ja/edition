@@ -112,6 +112,16 @@ export default class EditionGeometryControl extends M.impl.Control {
           width: 3,
           color: 'rgba(239,245,3, 0.8)'
         }),
+        image: new ol.style.Circle({
+          radius: 4,
+          fill: new ol.style.Fill({
+            color: 'rgba(239,245,3,0.8)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgba(239,245,3, 1)',
+            width: 2
+          })
+        })
       }),
       new ol.style.Style({
         image: new ol.style.Circle({
@@ -120,12 +130,12 @@ export default class EditionGeometryControl extends M.impl.Control {
             color: 'rgba(230,137,16, 0.8)'
           })
         }),
-        geometry: function(feature) {
+        geometry: function (feature) {
           // return the coordinates of the first ring of the polygon
-          var coordinates = olFeature.getGeometry().getCoordinates()[0];
+          var coordinates = olFeature.getGeometry().getCoordinates();
           if (olFeature.getGeometry().getType() === "MultiPolygon") {
             coordinates = olFeature.getGeometry().getCoordinates()[0][0];
-          }
+          } 
           return new ol.geom.MultiPoint(coordinates);
         }
       })
